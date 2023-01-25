@@ -12,6 +12,17 @@ With this work order the building maintenance workers will need to know the spec
 We experience this problem on a daily basis, so one way I have devised is to make a Web application to help keep track of the paint color, the paint sheen, type of ceiling tiles, and other maintenance materials for each room in each building on campus.
 
 
-|Week#|Date  |Milestone| 
-|--|--|--|--|--|
-| 1 | he | helo||
+|Week|Dates|Milestone|
+|------|------|---|
+| 1 |Jan 15-21 |Learn React |
+|2|Jan 22-28|Learn React|
+| 3|Jan 29-Feb 4 |Enviroment Setup |
+||||
+|  | | |
+||||
+|  | | |
+||||
+|  | | |
+||||
+|  | | |
+
