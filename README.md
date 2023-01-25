@@ -14,15 +14,19 @@ We experience this problem on a daily basis, so one way I have devised is to mak
 
 |Week|Dates|Milestone|
 |------|------|---|
-| 1 |Jan 15-21 |Learn React |
+|1|Jan 15-21 |Learn React |
 |2|Jan 22-28|Learn React|
-| 3|Jan 29-Feb 4 |Enviroment Setup |
-||||
-|  | | |
-||||
-|  | | |
-||||
-|  | | |
-||||
-|  | | |
+|3|Jan 29-Feb 4|Enviroment Setup |
+|4|Feb 5-11|Authentication|
+|5|Feb 12-18|Authentication|
+|6|Feb 19-25|Data Collection|
+|7|Feb 26-Mar 4|Rest Requests|
+|8|Mar 5-11|Frontend|
+|9|Mar 12-18|Rest Requests|
+|10|Mar 19-25|Frontend|
+|11|Mar 26-Apr 1|Extra Features|
+|12|Apr 2-8|Deploy|
+|13|Apr 9-15|Turn In|
+|14|Apr 16-22|Showcase|
+|15|Apr 23-29|Portfolio Defense|
 
