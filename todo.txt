@@ -1,0 +1,1 @@
+look at the roomsSchema type to add more types.
