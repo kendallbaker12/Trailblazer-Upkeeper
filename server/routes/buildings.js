@@ -1,4 +1,5 @@
 const express = require('express')
+const building = require('../models/Buildingmodel.js')
 
 const router = express.Router()
 
@@ -14,8 +15,17 @@ router.get('/:id', (req, res) => {
 })
 
 //Post a new building
-router.post('/', (req, res) => {
-    res.json({ mssg: 'Post a new building' })
+router.post('/', async (req, res) => {
+    const { name, classrooms } = req.body
+    console.log(name)
+    console.log(classrooms)
+
+    try {
+        const bld = await building.create({ name: name, classrooms: classrooms })
+        res.status(200).json(bld)
+    } catch (error) {
+        res.status(400).json({ error: error.message })
+    }
 })
 
 //Delete a building
