@@ -14,5 +14,9 @@ const roomsSchema = new Schema({
             values: ['classroom', 'office', 'storage', 'studyroom'],
             message: '{VALUE} is not supported'
         }
+    },
+    roomCapacity: {
+        type: Number,
+        default: 0,
     }
 })
