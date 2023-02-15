@@ -8,6 +8,9 @@ const Navbar = () => {
                 <Link to='/'>
                     <h1>TrailBlazer UpKeeper</h1>
                 </Link>
+                <Link>
+
+                </Link>
             </div>
         </header>
     )
