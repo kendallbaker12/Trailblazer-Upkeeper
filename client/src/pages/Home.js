@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
+import { useBuildingContext } from "../hooks/useBuildingsContext"
 
 // components
 import BldDetails from "../components/bldDetails"
+import BuildingForm from "../components/BuildingForm"
+
+
 
 const Home = () => {
-    const [buildings, setBuildings] = useState(null)
+    const { buildings, dispatch } = useBuildingContext()
 
     useEffect(() => {
         const fetchBuildings = async () => {
@@ -12,7 +16,7 @@ const Home = () => {
             const json = await response.json()
 
             if (response.ok) {
-                setBuildings(json)
+                dispatch({ type: 'SET_BUILDINGS', payload: json })
             }
         }
         fetchBuildings()
@@ -25,6 +29,7 @@ const Home = () => {
                     <BldDetails key={buildings._id} buildings={buildings} />
                 ))}
             </div>
+            <BuildingForm />
         </div>
     )
 }
