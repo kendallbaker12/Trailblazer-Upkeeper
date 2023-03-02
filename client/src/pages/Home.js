@@ -1,35 +1,15 @@
-import { useEffect } from "react"
-import { useBuildingContext } from "../hooks/useBuildingsContext"
+import { useEffect } from "react";
 
-// components
-import BldDetails from "../components/bldDetails"
-import BuildingForm from "../components/BuildingForm"
-
-
+//components
+import HomeComp from "../components/HomeComp";
 
 const Home = () => {
-    const { buildings, dispatch } = useBuildingContext()
-
-    useEffect(() => {
-        const fetchBuildings = async () => {
-            const response = await fetch('/api/buildings')
-            const json = await response.json()
-
-            if (response.ok) {
-                dispatch({ type: 'SET_BUILDINGS', payload: json })
-            }
-        }
-        fetchBuildings()
-    }, [])
 
     return (
-        <div className="home">
-            <div className="buildings">
-                {buildings && buildings.map((buildings) => (
-                    <BldDetails key={buildings._id} buildings={buildings} />
-                ))}
+        <div className="home-page-container">
+            <div>
+                <HomeComp />
             </div>
-            <BuildingForm />
         </div>
     )
 }

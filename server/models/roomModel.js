@@ -11,12 +11,15 @@ const roomsSchema = new Schema({
         type: String,
         lowercase: true,
         enum: {
-            values: ['classroom', 'office', 'storage', 'studyroom'],
+            values: ['classroom', 'office', 'storage', 'studyroom', 'hallway'],
             message: '{VALUE} is not supported'
         }
     },
-    roomCapacity: {
-        type: Number,
-        default: 0,
+    roomPaints: {
+        type: [mongoose.Types.ObjectId],
+        required: true,
+        ref: 'Paints'
     }
 })
+
+module.exports = mongoose.model('Rooms', roomsSchema)

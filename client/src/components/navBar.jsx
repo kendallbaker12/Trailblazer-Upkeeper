@@ -6,10 +6,13 @@ const Navbar = () => {
         <header>
             <div className='container'>
                 <Link to='/'>
-                    <h1>TrailBlazer UpKeeper</h1>
+                    <a>TrailBlazer UpKeeper</a>
                 </Link>
-                <Link>
-
+                <Link to='/login'>
+                    <a>Login</a>
+                </Link>
+                <Link to='/buildings'>
+                    <a>Buildings</a>
                 </Link>
             </div>
         </header>
