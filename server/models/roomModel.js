@@ -11,14 +11,19 @@ const roomsSchema = new Schema({
         type: String,
         lowercase: true,
         enum: {
-            values: ['classroom', 'office', 'storage', 'studyroom', 'hallway'],
+            values: ['classroom', 'office', 'storage', 'studyroom', 'hallway', 'lobby', 'misc'],
             message: '{VALUE} is not supported'
         }
     },
-    roomPaints: {
+    // roomPaints: {
+    //     type: [mongoose.Types.ObjectId],
+    //     required: true,
+    //     ref: 'Paints'
+    // },
+    buidlingID: {
         type: [mongoose.Types.ObjectId],
-        required: true,
-        ref: 'Paints'
+        // required: true,
+        ref: 'Building'
     }
 })
 
