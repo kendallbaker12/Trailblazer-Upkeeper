@@ -8,12 +8,12 @@ const {
 const router = express.Router()
 
 //Get all rooms in a building
-router.get('/building/:buildingId/rooms', getRooms)
+router.get('/:buildingId/rooms', getRooms)
 
 //Get a single room in a building
-router.get('/building/:buildingId/rooms/:roomId', getRoom)
+router.get('/:buildingId/rooms/:roomId', getRoom)
 
 //Post a new room
-router.get('/building/:buildingId/rooms', createRoom)
+router.post('/:buildingId/rooms', createRoom)
 
 module.exports = router

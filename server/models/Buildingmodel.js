@@ -8,7 +8,8 @@ const buildingSchema = new Schema({
         required: true
     },
     classrooms: {
-        type: Number,
+        type: [mongoose.Types.ObjectId],
+        ref: "Rooms",
         required: true
     },
 

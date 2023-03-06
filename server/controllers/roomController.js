@@ -1,27 +1,35 @@
+
 const room = require('../models/roomModel.js')
 const building = require('../models/Buildingmodel.js')
 const mongoose = require('mongoose')
 
 
 //get all rooms in a building.
+// router.get('/buildings/:buildingId/rooms', getRooms)
 const getRooms = async (req, res) => {
     const buildingId = req.params.buildingId;
     let rmm;
     try {
-        rmm = await building.findById(buildingId).populate('rooms');
+        rmm = await room.find({ buildingID: buildingId }).populate({
+            path: "buildingID",
+            select: "roomNumber roomType buildingID"
+        });
+        console.log(rmm)
     } catch (error) {
         res.status(500).json(error);
+        console.log(error)
         return;
     }
 
-    res.status(200).json(rooms)
+    res.status(200).json(rmm)
 }
 
 //get a single room in a building
+// router.get('/buildings/:buildingId/rooms/:roomId', getRoom)
 const getRoom = async (req, res) => {
     const roomId = req.params.roomId
 
-    if (!mongoose.Types.ObjectId.isValid(id)) {
+    if (!mongoose.Types.ObjectId.isValid(roomId)) {
         return res.status(404).json({ err: 'No such room id to get.' })
     }
     let rmm;
@@ -38,7 +46,9 @@ const getRoom = async (req, res) => {
 }
 
 //create new room in building
+// router.get('/buildings/:buildingId/rooms', createRoom)
 const createRoom = async (req, res) => {
+    console.log("test")
     const buildingId = req.params.buildingId;
     // const { roomNumber, roomType, } = req.body
     //add doc to db
@@ -52,7 +62,8 @@ const createRoom = async (req, res) => {
     }
     let rmm = {
         roomNumber: req.body.roomNumber,
-        roomType: req.body.roomType
+        roomType: req.body.roomType,
+        buildingID: bld._id
     }
     let rmmindb;
     try {

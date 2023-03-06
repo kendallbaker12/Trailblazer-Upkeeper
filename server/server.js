@@ -17,8 +17,8 @@ app.use((req, res, next) => {
 })
 
 //routes
-app.use('/api/buildings', buildings)
-app.use('/api/buidlings/rooms', rooms)
+app.use('/buildings', buildings)
+app.use('/buildings', rooms)
 
 //connect to db
 mongoose.connect(process.env.MONGO_URI)
