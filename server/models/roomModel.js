@@ -21,7 +21,7 @@ const roomsSchema = new Schema({
     //     ref: 'Paints'
     // },
     buildingID: {
-        type: [mongoose.Types.ObjectId],
+        type: mongoose.Types.ObjectId,
         // required: true,
         ref: 'Building'
     }
