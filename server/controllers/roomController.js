@@ -95,19 +95,36 @@ const createRoom = async (req, res) => {
 
 const deleteRoom = async (req, res) => {
     const roomId = req.params.roomId
-    if (!mongoose.Types.ObjectId.isValid(id)) {
+    if (!mongoose.Types.ObjectId.isValid(roomId)) {
         return res.status(404).json({ err: 'No such room id to delete.' })
     }
-    const rmm = await room.findOneAndDelete({ _id: id })
+    const rmm = await room.findOneAndDelete({ _id: roomId })
 
     if (!rmm) {
         return res.status(404).json({ error: 'no such room to delete.' })
     }
 }
 
+const updateRoom = async (req, res) => {
+    const roomId = req.params.roomId
+    if (!mongoose.Types.ObjectId.isValid(roomId)) {
+        return res.status(404).json({ err: "No such room id to update." })
+    }
+
+    const rmm = await room.findOneAndUpdate({ _id: roomId }, {
+        ...req.body
+    })
+    if (!bld) {
+        return res.status(404).json({ error: 'No such room to update.' })
+    }
+    res.status(200).json(rmm)
+}
+
+
 module.exports = {
     createRoom,
     getRoom,
     getRooms,
-    deleteRoom
+    deleteRoom,
+    updateRoom
 }

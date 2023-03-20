@@ -3,7 +3,8 @@ const {
     createRoom,
     getRoom,
     getRooms,
-    deleteRoom
+    deleteRoom,
+    updateRoom
 } = require('../controllers/roomController.js')
 
 const router = express.Router()
@@ -19,5 +20,8 @@ router.post('/:buildingId/rooms', createRoom)
 
 //Delete a room
 router.delete('/:buildingId/rooms/:roomId', deleteRoom)
+
+//update a room
+router.update('/:buildingId/rooms/:roomId', updateRoom)
 
 module.exports = router
