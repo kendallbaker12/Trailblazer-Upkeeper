@@ -114,7 +114,7 @@ const updateRoom = async (req, res) => {
     const rmm = await room.findOneAndUpdate({ _id: roomId }, {
         ...req.body
     })
-    if (!bld) {
+    if (!rmm) {
         return res.status(404).json({ error: 'No such room to update.' })
     }
     res.status(200).json(rmm)

@@ -22,6 +22,6 @@ router.post('/:buildingId/rooms', createRoom)
 router.delete('/:buildingId/rooms/:roomId', deleteRoom)
 
 //update a room
-router.update('/:buildingId/rooms/:roomId', updateRoom)
+router.patch('/:buildingId/rooms/:roomId', updateRoom)
 
 module.exports = router
