@@ -20,7 +20,6 @@ const paintsSchema = new Schema({
     paintComposition: {
         type: String,
         lowercase: true,
-
     },
     //possibility to add paint used in different buildings.
 
