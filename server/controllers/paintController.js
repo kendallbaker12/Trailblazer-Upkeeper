@@ -12,16 +12,16 @@ const getPaints = async (req, res) => {
 
 //get a specific paint
 const getPaint = async (req, res) => {
-    const { paintId } = req.params
+    const { id } = req.params
 
-    if (!mongoose.Types.ObjectId.isValid(paintId)) {
-        return res.status(404).json({ err: 'No such paint id to get' })
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({ err: 'No such paint id to get.' })
     }
 
-    const pnt = await paint.findById(paintId)
+    const pnt = await paint.findById(id)
 
     if (!pnt) {
-        return res.status(404).json({ error: 'No such paint' })
+        return res.status(404).json({ error: 'No such paint.' })
     }
 
     res.status(200).json(pnt)
@@ -48,9 +48,44 @@ const createPaint = async (req, res) => {
     }
 }
 
+//Delete a paint
+const deletePaint = async (req, res) => {
+    const { id } = req.params
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({ err: 'No such paint id to delete.' })
+    }
+    const pnt = await paint.findOneAndDelete({ _id: id })
+
+    if (!pnt) {
+        return res.status(404).json({ error: 'No such paint to delete.' })
+    }
+
+    res.status(200).json(pnt)
+}
+
+//Update a paint
+const updatePaint = async (req, res) => {
+    const { id } = req.params
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({ err: 'No such paint id to update.' })
+    }
+
+    const pnt = await paint.findOneAndUpdate({ _id: id }, {
+        ...req.body
+    })
+    if (!pnt) {
+        return res.status(404).json({ error: 'No such paint to update.' })
+    }
+    res.status(200).json(pnt)
+}
+
 module.exports = {
     getPaints,
     getPaint,
-    createPaint
+    createPaint,
+    deletePaint,
+    updatePaint
 }
 

@@ -3,7 +3,9 @@ const express = require('express')
 const {
     createPaint,
     getPaint,
-    getPaints
+    getPaints,
+    deletePaint,
+    updatePaint
 } = require('../controllers/paintController')
 
 const router = express.Router()
@@ -16,6 +18,11 @@ router.get('/:id', getPaint)
 
 //Post a new paint
 router.post('/', createPaint)
+
+//Delete a paint
+router.delete('/:id', deletePaint)
+
+router.patch('/:id', updatePaint)
 
 
 module.exports = router
