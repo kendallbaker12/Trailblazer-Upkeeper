@@ -12,7 +12,7 @@ const Buildings = () => {
 
     useEffect(() => {
         const fetchBuildings = async () => {
-            const response = await fetch('/api/buildings')
+            const response = await fetch('/buildings')
             const json = await response.json()
 
             if (response.ok) {
@@ -27,6 +27,7 @@ const Buildings = () => {
             <div className="buildings">
                 {buildings && buildings.map((buildings) => (
                     <BldDetails key={buildings._id} buildings={buildings} />
+
                 ))}
             </div>
             <BuildingForm />

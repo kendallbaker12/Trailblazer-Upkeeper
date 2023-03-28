@@ -1,7 +1,7 @@
 
 const room = require('../models/roomModel.js')
 const building = require('../models/Buildingmodel.js')
-//const paint = require('../models/paintModel.js')
+const paint = require('../models/paintModel.js')
 const mongoose = require('mongoose')
 
 
@@ -53,7 +53,7 @@ const getRoom = async (req, res) => {
 const createRoom = async (req, res) => {
     console.log("test")
     const buildingId = req.params.buildingId;
-    // const paintId = req.params.paintId;  need to add after testing
+    const paintId = req.params.paintId;
     //add doc to db
     let bld;
     try {
@@ -64,19 +64,19 @@ const createRoom = async (req, res) => {
         res.status(500).json(err)
         return;
     }
-    // let pnt;   need to add roomPaints after test 3/9/2023
-    // try {
-    //     //getting the paint id
-    //     pnt = await paint.findById(paintId);
-    //     console.log(pnt);
-    // } catch (err) {
-    //     res.status(500).json(err)
-    //     return;
-    // }
+    let pnt;
+    try {
+        //getting the paint id
+        pnt = await paint.findById(paintId);
+        console.log(pnt);
+    } catch (err) {
+        res.status(500).json(err)
+        return;
+    }
     let rmm = {
         roomNumber: req.body.roomNumber,
         roomType: req.body.roomType,
-        // roomPaints: pnt.__id,  need to add roomPaints after test 3/9/2023
+        roomPaints: req.body.roomPaints,
         buildingID: bld._id
     }
     let rmmindb;

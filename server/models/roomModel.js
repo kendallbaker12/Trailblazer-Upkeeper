@@ -15,11 +15,11 @@ const roomsSchema = new Schema({
             message: '{VALUE} is not supported'
         }
     },
-    // roomPaints: {
-    //     type: [mongoose.Types.ObjectId],
-    //     required: true,
-    //     ref: 'Paints'
-    // },
+    roomPaints: {
+        type: [mongoose.Types.ObjectId],
+        required: true,
+        ref: 'Paints'
+    },
     buildingID: {
         type: mongoose.Types.ObjectId,
         // required: true,

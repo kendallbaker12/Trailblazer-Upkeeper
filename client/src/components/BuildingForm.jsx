@@ -5,14 +5,14 @@ const BuildingForm = () => {
     const { dispatch } = useBuildingContext()
 
     const [name, setName] = useState('')
-    const [classrooms, setClassrooms] = useState('')
+    const [rooms, setClassrooms] = useState('')
     const [error, setError] = useState(null)
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const building = { name, classrooms }
+        const building = { name, rooms }
 
-        const response = await fetch('/api/buildings', {
+        const response = await fetch('/buildings', {
             method: 'POST',
             body: JSON.stringify(building),
             headers: {
@@ -22,6 +22,7 @@ const BuildingForm = () => {
         const json = await response.json()
 
         if (!response.ok) {
+            console.log("error here")
             setError(json.error)
         }
         if (response.ok) {
@@ -46,7 +47,7 @@ const BuildingForm = () => {
             <input
                 type="number"
                 onChange={(e) => setClassrooms(e.target.value)}
-                value={classrooms}
+                value={rooms}
             />
             <button>Add Building</button>
             {error && <div className="error">{error}</div>}

@@ -29,13 +29,13 @@ const getBuilding = async (req, res) => {
 
 //create new building
 const createBuilding = async (req, res) => {
-    const { name, classrooms } = req.body
+    const { name, rooms } = req.body
     console.log(name)
-    console.log(classrooms)
+    console.log(rooms)
 
     //add doc to db
     try {
-        const bld = await building.create({ name: name, classrooms: classrooms })
+        const bld = await building.create({ name: name, rooms: rooms })
         res.status(200).json(bld)
     } catch (error) {
         res.status(400).json({ error: error.message })

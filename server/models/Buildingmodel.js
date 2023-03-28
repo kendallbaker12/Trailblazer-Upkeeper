@@ -7,10 +7,8 @@ const buildingSchema = new Schema({
         type: String,
         required: true
     },
-    classrooms: {
-        type: [mongoose.Types.ObjectId],
-        ref: "Rooms",
-        required: true
+    rooms: {
+        type: Number
     },
 
 }, { timestamps: true })
