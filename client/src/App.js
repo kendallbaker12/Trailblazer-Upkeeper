@@ -5,6 +5,7 @@ import Buildings from './pages/Buildings';
 import Navbar from './components/navBar';
 import Login from './pages/Login';
 import Home from './pages/Home';
+import Paints from './pages/Paints';
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
             />
             <Route
               // login page coming from pages 
+              path='/paints'
+              element={<Paints/>}
+            />
+            <Route
               path='/login'
               element={<Login />}
             />

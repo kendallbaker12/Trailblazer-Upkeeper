@@ -1,8 +1,8 @@
 import { useState } from "react"
-import { useBuildingContext } from "../hooks/useBuildingsContext"
+//import { useBuildingContext } from "../hooks/useBuildingsContext"
 
 const BuildingForm = () => {
-    const { dispatch } = useBuildingContext()
+    //const { dispatch } = useBuildingContext()
 
     const [name, setName] = useState('')
     const [rooms, setClassrooms] = useState('')
@@ -30,7 +30,7 @@ const BuildingForm = () => {
             setClassrooms('')
             setError(null)
             console.log('new building added', json)
-            dispatch({ type: 'CREATE_BUILDING', payload: json })
+            //dispatch({ type: 'CREATE_BUILDING', payload: json })
         }
     }
     return (

@@ -1,5 +1,5 @@
-import { useEffect } from "react"
-import { useBuildingContext } from "../hooks/useBuildingsContext"
+import { useEffect, useState } from "react"
+//import { useBuildingContext } from "../hooks/useBuildingsContext"
 
 // components
 import BldDetails from "../components/bldDetails"
@@ -8,7 +8,8 @@ import BuildingForm from "../components/BuildingForm"
 
 
 const Buildings = () => {
-    const { buildings, dispatch } = useBuildingContext()
+    // const { buildings, dispatch } = useBuildingContext()
+    const [buildings,setBuildings] = useState(null)
 
     useEffect(() => {
         const fetchBuildings = async () => {
@@ -16,7 +17,8 @@ const Buildings = () => {
             const json = await response.json()
 
             if (response.ok) {
-                dispatch({ type: 'SET_BUILDINGS', payload: json })
+                // dispatch({ type: 'SET_BUILDINGS', payload: json })
+                setBuildings(json)
             }
         }
         fetchBuildings()
