@@ -30,6 +30,7 @@ const BuildingForm = () => {
             setClassrooms('')
             setError(null)
             console.log('new building added', json)
+            window.location.reload(false)
             //dispatch({ type: 'CREATE_BUILDING', payload: json })
         }
     }

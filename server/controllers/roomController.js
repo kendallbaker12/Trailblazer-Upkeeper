@@ -12,11 +12,9 @@ const getRooms = async (req, res) => {
     let rmm;
     try {
         rmm = await room.find({ buildingID: buildingId })
-        // .populate({
-        //     path: "buildingID",
-        //     select: "roomNumber roomType buildingID"
-        //     //need to add roomPaints after test 3/9/2023
-        // });
+        .populate({
+            path: "roomPaints",
+        });
         console.log(rmm)
     } catch (error) {
         res.status(500).json(error);

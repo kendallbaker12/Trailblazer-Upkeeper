@@ -17,6 +17,9 @@ const Navbar = () => {
                 <Link to='/paints'>
                     <a>Paints</a>
                 </Link>
+                <Link to='/rooms'>
+                    <a>Rooms</a>
+                </Link>
             </div>
         </header>
     )

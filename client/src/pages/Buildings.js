@@ -14,19 +14,22 @@ const Buildings = () => {
     useEffect(() => {
         const fetchBuildings = async () => {
             const response = await fetch('/buildings')
-            const json = await response.json()
+            const bldjson = await response.json()
 
             if (response.ok) {
                 // dispatch({ type: 'SET_BUILDINGS', payload: json })
-                setBuildings(json)
+                setBuildings(bldjson)
+                
             }
         }
         fetchBuildings()
+
     }, [])
+
 
     return (
         <div className="home">
-            <div className="buildings">
+            <div className="buildings" >
                 {buildings && buildings.map((buildings) => (
                     <BldDetails key={buildings._id} buildings={buildings} />
 
