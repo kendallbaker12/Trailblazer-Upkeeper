@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 // components
 import BldDetails from "../components/bldDetails"
 import BuildingForm from "../components/BuildingForm"
+import RoomForm from "../components/roomForm"
 
 
 
@@ -36,6 +37,7 @@ const Buildings = () => {
                 ))}
             </div>
             <BuildingForm />
+            
         </div>
     )
 }

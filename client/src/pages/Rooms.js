@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 import RoomDetails from "../components/roomDetails"
-
+import RoomForm from "../components/roomForm"
 
 
 const Rooms = () =>{
@@ -33,21 +33,7 @@ const Rooms = () =>{
     return(
         <div className="room-page">
             <div className="rooms">
-            {
-                rooms && rooms.map(({
-                    _id,
-                    roomNumber,
-                    roomType,
-                    roomPaints
-                })=> (
-                    <RoomDetails 
-                        key={_id}
-                        roomNumber={roomNumber}
-                        roomType={roomType}
-                        roomPaints={roomPaints}
-                    />
-                ))
-            }
+                <RoomForm/>
             </div>
         </div>
     )
