@@ -17,7 +17,7 @@ const roomsSchema = new Schema({
     },
     roomPaints: {
         type: [mongoose.Types.ObjectId],
-        required: true,
+        // required: true,
         ref: 'Paints'
     },
     buildingID: {

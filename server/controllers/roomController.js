@@ -49,7 +49,7 @@ const getRoom = async (req, res) => {
 //create new room in building
 // router.get('/buildings/:buildingId/rooms', createRoom)
 const createRoom = async (req, res) => {
-    console.log("test")
+    console.log(req.body)
     const buildingId = req.params.buildingId;
     const paintId = req.params.paintId;
     //add doc to db
@@ -57,7 +57,7 @@ const createRoom = async (req, res) => {
     try {
         //getting the building id
         bld = await building.findById(buildingId);
-        console.log(bld);
+        //console.log(bld);
     } catch (err) {
         res.status(500).json(err)
         return;
@@ -77,12 +77,14 @@ const createRoom = async (req, res) => {
         roomPaints: req.body.roomPaints,
         buildingID: bld._id
     }
-    let rmmindb;
+    let rmmindb
     try {
         rmmindb = await room.create(rmm)
         res.status(200).json(rmm)
 
     } catch (error) {
+        console.log('joshs errror',rmm)
+        console.log(error)
         res.status(500).json(error);
         return;
     }
