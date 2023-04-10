@@ -7,25 +7,16 @@ import RoomForm from "./roomForm"
 
 
 const BldDetails = ({ buildings }) => {
-    const [showButton, setShowButton] = useState(true);
-    const navigate = useNavigate()
+    const [showForm, setShowForm] = useState(false)
+    const [showRoomDetails, setShowRoomDetails] = useState(false)
     const [rooms, setRooms] = useState(null)
     const [roomNumber, setRoomNumber] = useState('')
     const [roomType, setRoomType] = useState('')
     const [roomPaints, setRoomPaints] = useState([])
     const [error, setError] = useState(null)
 
-    // PaintSelectorList = roomPaints.map((paint2) =>{
-    //     <li key={paint2}>
-    //         {paint2}
-    //     </li>
-    // })
-
-
     const handleClick = async () => {
         const response = await fetch('/buildings/' + String(buildings._id))
-        const bldjson = await response.json()
-
         if (response.ok) {
             var rooms = []
             const response = await fetch('/buildings/' + String(buildings._id) + '/rooms')
@@ -43,11 +34,11 @@ const BldDetails = ({ buildings }) => {
             }
         }
         setRooms(rooms)
+        setShowRoomDetails(!showRoomDetails)
     }
 
     const postRooms = async () => {
         const response = await fetch('/buildings/' + String(buildings._id))
-
         if (response.ok) {
             console.log('testing', roomPaints)
             var rooms = { roomNumber, roomType, roomPaints }
@@ -77,27 +68,16 @@ const BldDetails = ({ buildings }) => {
         console.log(roomNumber, roomType, roomPaints)
     }
 
+    const toggleForm = () => {
+        setShowForm(!showForm);
+    }
+
     return (
         <div className="bld-details">
             <h4>{buildings.name}</h4>
             <p><strong>Number of rooms: </strong>{buildings.rooms}</p>
-            <button onClick={handleClick}>Click Here to see rooms.</button>
-            <div className="bld-room-details">
-                {
-                    rooms && rooms.map(({
-                        _id,
-                        roomNumber,
-                        roomType,
-                        roomPaints
-                    }) => (
-                        <RoomDetails
-                            key={_id}
-                            roomNumber={roomNumber}
-                            roomType={roomType}
-                            roomPaints={roomPaints}
-                        />
-                    ))
-                }
+            <button onClick={toggleForm}>{showForm ? "Hide" : "Show"} {buildings.name}</button>
+            {showForm && (
                 <div className="room-form">
                     <label><strong>Room Number: </strong></label>
                     <input
@@ -119,21 +99,6 @@ const BldDetails = ({ buildings }) => {
                         <option value={'misc'}>Misc.</option>
                     </select>
                     <label><strong>Room Paints: </strong></label>
-                    {/* <input
-                type='text'
-                onChange={(e) => setRoomPaints(e.target.value)}
-                value={[roomPaints]}
-            /> */}
-                    {/* <div>
-                <button>Paint dropdown</button>
-            </div> */}
-                    {/* <ul>
-                        {roomPaints.map((paint2) => {
-                            <li key={paint2}>
-                                {paint2}
-                            </li>
-                        })}
-                    </ul> */}
                     <PaintDropDown
                         roomPaints={roomPaints}
                         setRoomPaints={setRoomPaints}
@@ -141,7 +106,29 @@ const BldDetails = ({ buildings }) => {
                     <button onClick={postRooms}>Add Room</button>
                     {error && <div className="error">{error}</div>}
                 </div>
-            </div>
+            )}
+            <button onClick={() => {
+                handleClick()
+            }}>{showRoomDetails ? "Hide" : "Show"} Rooms</button>
+            {showRoomDetails && (
+                <div className="bld-room-details">
+                    {
+                        rooms && rooms.map(({
+                            _id,
+                            roomNumber,
+                            roomType,
+                            roomPaints
+                        }) => (
+                            <RoomDetails
+                                key={_id}
+                                roomNumber={roomNumber}
+                                roomType={roomType}
+                                roomPaints={roomPaints}
+                            />
+                        ))
+                    }
+                </div>
+            )}
         </div>
     )
 }
