@@ -10,7 +10,7 @@ import RoomForm from "../components/roomForm"
 
 const Buildings = () => {
     // const { buildings, dispatch } = useBuildingContext()
-    const [buildings,setBuildings] = useState(null)
+    const [buildings, setBuildings] = useState(null)
 
     useEffect(() => {
         const fetchBuildings = async () => {
@@ -20,7 +20,7 @@ const Buildings = () => {
             if (response.ok) {
                 // dispatch({ type: 'SET_BUILDINGS', payload: json })
                 setBuildings(bldjson)
-                
+
             }
         }
         fetchBuildings()
@@ -29,17 +29,16 @@ const Buildings = () => {
 
 
     return (
-        <div className="home">
-            <div className="buildings" >
-                {buildings && buildings.map((buildings) => (
-                    <BldDetails key={buildings._id} buildings={buildings} />
-
+        <div className="">
+            <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-2">
+                {buildings && buildings.map((building) => (
+                    <div key={building._id} className="bg-[#003058] rounded-lg shadow-md p-4">
+                        <BldDetails buildings={building} />
+                    </div>
                 ))}
             </div>
-            <BuildingForm />
-            
         </div>
-    )
+    );
 }
 
 export default Buildings

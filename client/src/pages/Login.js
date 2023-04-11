@@ -2,13 +2,14 @@ import { useEffect } from "react";
 
 //components
 import LoginForm from "../components/LoginForm";
+import BuildingForm from "../components/BuildingForm";
 
 const Login = () => {
 
     return (
         <div className="login-page-container">
             <div>
-                <LoginForm />
+                <BuildingForm />
             </div>
         </div>
     )
