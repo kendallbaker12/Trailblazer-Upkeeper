@@ -32,7 +32,7 @@ const Buildings = () => {
         <div className="">
             <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-2">
                 {buildings && buildings.map((building) => (
-                    <div key={building._id} className="bg-[#003058] rounded-lg shadow-md p-4">
+                    <div key={building._id} className="bg-[#003058] rounded-lg shadow-md p-4 shadow-lg shadow-[#ba1c21]">
                         <BldDetails buildings={building} />
                     </div>
                 ))}

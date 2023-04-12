@@ -62,15 +62,15 @@ const PaintForm = () => {
         }
     }
     return (
-        <div className="max-w-md mx-10 bg-gray-100 rounded-xl shadow-md overflow-hidden border-4 border-blue-50 border-opacity-90">
-            <div className="px-4 py-5 sm:px-6 bg-gray-200 text-center">
+        <div className="max-w-md mx-10 bg-gray-100 rounded-xl shadow-lg shadow-[#ba1c21] overflow-hidden border-4 border-blue-50 border-opacity-90">
+            <div className="px-4 py-5 sm:px-6 bg-gray-200 text-center shadow-[#ba1c21]">
                 <h2 className="text-lg leading-6 font-medium text-gray-900">Add a New Paint!</h2>
             </div>
             <div className="p-6">
                 <form className="space-y-6" onSubmit={handleSubmit}>
                     <div>
                         {/* <label className="block text-sm font-medium text-gray-700">Paint Name</label> */}
-                        <div className="mt-1">
+                        <div className="mt-1 shadow-lg shadow-[#003058]">
                             <input
                                 type="text"
                                 value={paintName}
@@ -85,7 +85,7 @@ const PaintForm = () => {
                     </div>
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Paint Finish</label>
-                        <div className="mt-1">
+                        <div className="mt-1 shadow-md shadow-[#003058]">
                             <select
                                 value={paintFinishes}
                                 onChange={(e) => setPaintFinish(e.target.value)}
@@ -105,7 +105,7 @@ const PaintForm = () => {
                     </div>
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Paint Composition</label>
-                        <div className="mt-1">
+                        <div className="mt-1 shadow-md shadow-[#003058]">
                             <input
                                 type="text"
                                 value={paintComposition}

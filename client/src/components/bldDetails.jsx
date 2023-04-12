@@ -112,7 +112,7 @@ const BldDetails = ({ buildings, rms }) => {
                     }}>{showRoomDetails ? <Icon path={mdiEyeOff} size={1} /> : <Icon path={mdiEye} size={1} />}</button>
             </div>
             {showForm && (
-                <div className="bg-white rounded-lg shadow-lg p-6">
+                <div className="bg-white rounded-lg shadow-lg p-6 shadow-lg shadow-[#003058]">
                     <h4 class="text-lg font-bold mb-4 ">Add a New Room!</h4>
                     <div>
                         <label className="block mb-2 font-bold text-gray-700"><strong>Room Number: </strong></label>
@@ -129,7 +129,7 @@ const BldDetails = ({ buildings, rms }) => {
                         )}
                     </div>
                     <div>
-                        <label className="block mb-2 font-bold text-gray-700 ">Room Type: </label>
+                        <label className="block mb-2 font-bold text-gray-700">Room Type: </label>
                         <select
 
                             value={roomType}
