@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Alert } from "@material-tailwind/react"
 // import Select from "./paintFormSelect"
 
 import PaintDetails from "./paintDetails"
@@ -68,6 +69,7 @@ const PaintForm = () => {
             </div>
             <div className="p-6">
                 <form className="space-y-6" onSubmit={handleSubmit}>
+
                     <div>
                         {/* <label className="block text-sm font-medium text-gray-700">Paint Name</label> */}
                         <div className="mt-1 shadow-lg shadow-[#003058]">

@@ -20,7 +20,7 @@ const Paints = () => {
         fetchPaints()
     }, [])
     return (
-        <div className="paint-page">
+        <div className="paint-page mt-20">
             <div className="flex flex-wrap justify-between">
                 <div>
                     <PaintForm />
