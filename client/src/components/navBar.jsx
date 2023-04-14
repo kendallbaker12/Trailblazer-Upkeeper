@@ -8,24 +8,24 @@ const Navbar = () => {
                     <h1 className="text-white font-bold text-xl ">TrailBlazer UpKeeper</h1>
                 </Link>
                 <nav>
-                    <ul className="flex space-x-4 text-gray-300 text-md">
+                    <ul className="flex space-x-10 text-gray-300 text-md">
                         <li>
-                            <Link to="/login" className="hover:text-white">
+                            <Link to="/login" className="hover:text-[#ba1c21] text-white px-5">
                                 Login
                             </Link>
                         </li>
                         <li>
-                            <Link to="/buildings" className="hover:text-white">
+                            <Link to="/buildings" className="hover:text-[#ba1c21] text-white">
                                 Buildings
                             </Link>
                         </li>
                         <li>
-                            <Link to="/paints" className="hover:text-white">
+                            <Link to="/paints" className="hover:text-[#ba1c21] text-white">
                                 Paints
                             </Link>
                         </li>
                         <li>
-                            <Link to="/rooms" className="hover:text-white">
+                            <Link to="/rooms" className="hover:text-[#ba1c21] text-white">
                                 Rooms
                             </Link>
                         </li>

@@ -3,16 +3,17 @@ import { useEffect } from "react";
 //components
 import LoginForm from "../components/LoginForm";
 import BuildingForm from "../components/BuildingForm";
+import FacilityLinks from "../components/LoginForm";
 
-const Login = () => {
+const Facility = () => {
 
     return (
         <div className="login-page-container">
             <div>
-                <BuildingForm />
+                <FacilityLinks />
             </div>
         </div>
     )
 }
 
-export default Login
+export default Facility

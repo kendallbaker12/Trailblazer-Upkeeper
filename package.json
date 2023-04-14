@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@material-tailwind/react": "^1.4.2"
+    "@material-tailwind/react": "^1.4.2",
+    "react-icons": "^4.8.0"
   }
 }

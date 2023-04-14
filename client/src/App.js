@@ -7,6 +7,9 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import Paints from './pages/Paints';
 import Rooms from './pages/Rooms';
+import Footer from './components/footerComp';
+
+//github 
 
 function App() {
   return (
@@ -28,7 +31,7 @@ function App() {
             <Route
               // login page coming from pages 
               path='/paints'
-              element={<Paints/>}
+              element={<Paints />}
             />
             <Route
               path='/login'
@@ -41,6 +44,7 @@ function App() {
           </Routes>
         </div>
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }
