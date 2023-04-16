@@ -72,7 +72,7 @@ const PaintForm = () => {
 
                     <div>
                         {/* <label className="block text-sm font-medium text-gray-700">Paint Name</label> */}
-                        <div className="mt-1 shadow-lg shadow-[#003058]">
+                        <div className="mt-1 shadow-lg shadow-[#003058] ">
                             <input
                                 type="text"
                                 value={paintName}
@@ -80,7 +80,7 @@ const PaintForm = () => {
                                 className="appearance-none block w-full px-3 
                                 py-2 border rounded-md placeholder-gray-400 
                                 focus:outline-none focus:ring-4 focus:ring-blue-500 
-                                focus:border-transparent"
+                                focus:border-transparent "
                                 placeholder="Enter paint name"
                             />
                         </div>
@@ -120,7 +120,7 @@ const PaintForm = () => {
                     <div className="flex items-center justify-end">
                         <button
                             type="submit"
-                            className="inline-flex justify-center py-2 px-4 text-white bg-gradient-to-tr mx-10 from-red-500 via-red-600 to-blue-700 focus:ring-1 focus:outline-none focus:ring-red-500 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg hover:shadow-red-800/90 text-sm px-7 py-2.5 text-center mr-2 mb-2">
+                            className="inline-flex justify-center py-2 px-4 text-white bg-gradient-to-tr mx-10 from-red-500 via-red-600 to-blue-700 focus:ring-1 focus:outline-none focus:ring-red-500 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg hover:shadow-red-800/90 text-sm px-7 py-2.5 text-center mr-2 mb-2 transform hover:scale-110 transition duration-300">
                             Add Paint
                         </button>
                     </div>

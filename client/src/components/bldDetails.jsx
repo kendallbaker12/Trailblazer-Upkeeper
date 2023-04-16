@@ -94,7 +94,7 @@ const BldDetails = ({ buildings, rms }) => {
             <div className="button-div flex justify-center items-center space-x-4 ">
                 <button onClick={toggleForm} className="w-1/5 inline-flex justify-center py-2 px-7 
                 text-white bg-gradient-to-tr mx-10
-                from-red-500 via-red-600 to-blue-700 
+                from-[#ba1c21] via-[#ba1c21] to-[#003058]
                 focus:ring-1 focus:outline-none focus:ring-red-500 
                 shadow-lg shadow-red-500/50 dark:shadow-lg 
                 dark:shadow-blue-800/80 font-medium rounded-lg hover:shadow-red-800/90
@@ -102,7 +102,7 @@ const BldDetails = ({ buildings, rms }) => {
                     {showForm ? <Icon path={mdiBrushOff} size={1} /> : <Icon path={mdiBrush} size={1} />}</button>
                 <button className="w-1/5 inline-flex justify-center py-2 px-7 
                 text-white bg-gradient-to-tr mx-10
-                from-red-500 via-red-600 to-blue-700 
+                from-[#ba1c21] via-[#ba1c21] to-[#003058] 
                 focus:ring-1 focus:outline-none focus:ring-red-500 
                 shadow-lg shadow-red-500/50 dark:shadow-lg 
                 dark:shadow-blue-800/80 font-medium rounded-lg hover:shadow-red-800/90
@@ -171,7 +171,7 @@ const BldDetails = ({ buildings, rms }) => {
                 </div>
             )}
             {showRoomDetails && (
-                <div className="bg-[#003058] border border-gray-300 rounded-md p-4">
+                <div className="bg-[#003058] border border-gray-300 rounded-md p-4 grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-2 ">
                     {rooms && rooms.map(({
                         _id,
                         roomNumber,

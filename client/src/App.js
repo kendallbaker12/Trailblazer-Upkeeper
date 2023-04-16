@@ -3,11 +3,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // pages and components
 import Buildings from './pages/Buildings';
 import Navbar from './components/navBar';
-import Login from './pages/Login';
+import Login from './pages/Links';
 import Home from './pages/Home';
 import Paints from './pages/Paints';
 import Rooms from './pages/Rooms';
 import Footer from './components/footerComp';
+import Facility from './pages/Links';
 
 //github 
 
@@ -34,8 +35,8 @@ function App() {
               element={<Paints />}
             />
             <Route
-              path='/login'
-              element={<Login />}
+              path='/links'
+              element={<Facility />}
             />
             <Route
               path='/rooms'
