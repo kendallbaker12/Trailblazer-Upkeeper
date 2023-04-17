@@ -12,7 +12,7 @@ const BuildingForm = () => {
 
         const building = { name, rooms }
 
-        const response = await fetch('/buildings', {
+        const response = await fetch('https://trailblazerupkeeper.onrender.com/buildings', {
             method: 'POST',
             body: JSON.stringify(building),
             headers: {

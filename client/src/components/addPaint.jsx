@@ -5,7 +5,7 @@ const PaintDropDown = ({ roomPaints, setRoomPaints }) => {
     const [paint1, setPaint1] = useState('')
     useEffect(() => {
         const fetchPaints = async () => {
-            const response = await fetch('/paints')
+            const response = await fetch('https://trailblazerupkeeper.onrender.com/paints')
             const json = await response.json()
 
             if (response.ok) {
@@ -19,7 +19,7 @@ const PaintDropDown = ({ roomPaints, setRoomPaints }) => {
 
     return (
         <div>
-            <ul className="my-2 mx-24 rounded-64">
+            <ul className="mx-24 my-2 rounded-64">
                 {roomPaints.map(paint2 =>
                     <li key={paint2} className="py-2 px-10 bg-[#003058] opacity-100 text-white rounded-full mb-2 text-center">{paints.find(paint3 => paint3._id == paint2).paintName}</li>
                 )}

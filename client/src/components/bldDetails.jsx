@@ -19,10 +19,10 @@ const BldDetails = ({ buildings, rms }) => {
     const [error, setError] = useState(null)
 
     const handleClick = async () => {
-        const response = await fetch('/buildings/' + String(buildings._id))
+        const response = await fetch('https://trailblazerupkeeper.onrender.com/buildings/' + String(buildings._id))
         if (response.ok) {
             var rooms = []
-            const response = await fetch('/buildings/' + String(buildings._id) + '/rooms')
+            const response = await fetch('https://trailblazerupkeeper.onrender.com/buildings/' + String(buildings._id) + '/rooms')
             const roomjson = await response.json()
             if (response.ok) {
                 if (roomjson.length == 0) {
@@ -41,19 +41,19 @@ const BldDetails = ({ buildings, rms }) => {
         setShowRoomDetails(!showRoomDetails)
     }
     const updateRooms = async () => {
-        const response = await fetch('/buildings/' + String(buildings._id))
+        const response = await fetch('https://trailblazerupkeeper.onrender.com/buildings/' + String(buildings._id))
         if (response.ok) {
-            const secondresponse = await fetch('/buildings/' + String(buildings._id + '/rooms' + String(rms._id)))
+            const secondresponse = await fetch('https://trailblazerupkeeper.onrender.com/buildings/' + String(buildings._id + '/rooms' + String(rms._id)))
 
         }
     }
     const postRooms = async () => {
-        const response = await fetch('/buildings/' + String(buildings._id))
+        const response = await fetch('https://trailblazerupkeeper.onrender.com/buildings/' + String(buildings._id))
         if (response.ok) {
             console.log('testing', roomPaints)
             var rooms = { roomNumber, roomType, roomPaints }
             console.log(rooms)
-            const presponse = await fetch('/buildings/' + String(buildings._id) + '/rooms', {
+            const presponse = await fetch('https://trailblazerupkeeper.onrender.com/buildings/' + String(buildings._id) + '/rooms', {
                 method: 'POST',
                 body: JSON.stringify(rooms),
                 headers: {
@@ -86,12 +86,12 @@ const BldDetails = ({ buildings, rms }) => {
 
     return (
         <div className="bg-white  rounded-lg shadow-md p-10 border border-2 border-[#ba1c21]">
-            <div className="flex flex-col items-center bg-zinc-50 rounded-sm mx-24">
+            <div className="flex flex-col items-center mx-24 rounded-sm bg-zinc-50">
                 <h3 className="text-[#003058] text-lg font-bold mb-2">{buildings.name}</h3>
-                <p className="text-md font-bold mb-2">Number of rooms: {buildings.rooms}</p>
+                <p className="mb-2 font-bold text-md">Number of rooms: {buildings.rooms}</p>
             </div>
             <br />
-            <div className="button-div flex justify-center items-center space-x-4 ">
+            <div className="flex items-center justify-center space-x-4 button-div ">
                 <button onClick={toggleForm} className="w-1/5 inline-flex justify-center py-2 px-7 
                 text-white bg-gradient-to-tr mx-10
                 from-[#ba1c21] via-[#ba1c21] to-[#003058]
@@ -125,7 +125,7 @@ const BldDetails = ({ buildings, rms }) => {
                             required
                         />
                         {!roomNumber && (
-                            <div className="text-red-500 text-sm">This field is required.</div>
+                            <div className="text-sm text-red-500">This field is required.</div>
                         )}
                     </div>
                     <div>
@@ -134,7 +134,7 @@ const BldDetails = ({ buildings, rms }) => {
 
                             value={roomType}
                             onChange={(e) => setRoomType(e.target.value)}
-                            className="w-full border-2 border-gray-300 p-2 rounded-lg mb-4"
+                            className="w-full p-2 mb-4 border-2 border-gray-300 rounded-lg"
                         >
                             <option>
                                 Select a Room Type

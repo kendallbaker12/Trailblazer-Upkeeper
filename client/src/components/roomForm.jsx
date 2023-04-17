@@ -10,11 +10,11 @@ const RoomForm = ({ buildings }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const fetchRoomsResponse = await fetch('/buildings/' + String(buildings._id))
+        const fetchRoomsResponse = await fetch('https://trailblazerupkeeper.onrender.com/buildings/' + String(buildings._id))
 
         if (fetchRoomsResponse.ok) {
             const rooms = { roomNumber, roomType, roomPaints }
-            const postRoomsResponse = await fetch('/buildings/' + String(buildings._id) + '/rooms', {
+            const postRoomsResponse = await fetch('https://trailblazerupkeeper.onrender.com/buildings/' + String(buildings._id) + '/rooms', {
                 method: 'POST',
                 body: JSON.stringify(rooms),
                 headers: {
@@ -39,12 +39,12 @@ const RoomForm = ({ buildings }) => {
 
     }
     return (
-        <div className="bg-gray-100 p-6">
-            <h4 className="text-lg font-semibold mb-4">Add a New Room!</h4>
+        <div className="p-6 bg-gray-100">
+            <h4 className="mb-4 text-lg font-semibold">Add a New Room!</h4>
             <form className="space-y-4" onSubmit={handleSubmit}>
                 <div className="flex flex-col sm:flex-row sm:space-x-4">
                     <div className="flex-1">
-                        <label htmlFor="room-number" className="block font-medium mb-1">
+                        <label htmlFor="room-number" className="block mb-1 font-medium">
                             Room Number:
                         </label>
                         <input
@@ -57,7 +57,7 @@ const RoomForm = ({ buildings }) => {
                         />
                     </div>
                     <div className="flex-1">
-                        <label htmlFor="room-type" className="block font-medium mb-1">
+                        <label htmlFor="room-type" className="block mb-1 font-medium">
                             Room Type:
                         </label>
                         <select
@@ -81,7 +81,7 @@ const RoomForm = ({ buildings }) => {
                     </div>
                 </div>
                 <div>
-                    <label htmlFor="room-paints" className="block font-medium mb-1">
+                    <label htmlFor="room-paints" className="block mb-1 font-medium">
                         Room Paints:
                     </label>
                     <input
@@ -96,12 +96,12 @@ const RoomForm = ({ buildings }) => {
                 <div>
                     <button
                         type="submit"
-                        className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md"
+                        className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600"
                     >
                         Add Room
                     </button>
                     {error && (
-                        <div className="text-red-500 font-medium">{error}</div>
+                        <div className="font-medium text-red-500">{error}</div>
                     )}
                 </div>
             </form>

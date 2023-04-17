@@ -38,7 +38,7 @@ const PaintForm = () => {
 
         const paint = { paintName, paintFinishes, paintComposition }
 
-        const response = await fetch('/paints', {
+        const response = await fetch('https://trailblazerupkeeper.onrender.com/paints', {
             method: 'POST',
             body: JSON.stringify(paint),
             headers: {
@@ -65,7 +65,7 @@ const PaintForm = () => {
     return (
         <div className="max-w-md mx-10 bg-gray-100 rounded-xl shadow-lg shadow-[#ba1c21] overflow-hidden border-4 border-blue-50 border-opacity-90">
             <div className="px-4 py-5 sm:px-6 bg-gray-200 text-center shadow-[#ba1c21]">
-                <h2 className="text-lg leading-6 font-medium text-gray-900">Add a New Paint!</h2>
+                <h2 className="text-lg font-medium leading-6 text-gray-900">Add a New Paint!</h2>
             </div>
             <div className="p-6">
                 <form className="space-y-6" onSubmit={handleSubmit}>
@@ -77,10 +77,7 @@ const PaintForm = () => {
                                 type="text"
                                 value={paintName}
                                 onChange={(e) => setPaintName(e.target.value)}
-                                className="appearance-none block w-full px-3 
-                                py-2 border rounded-md placeholder-gray-400 
-                                focus:outline-none focus:ring-4 focus:ring-blue-500 
-                                focus:border-transparent "
+                                className="block w-full px-3 py-2 placeholder-gray-400 border rounded-md appearance-none focus:outline-none focus:ring-4 focus:ring-blue-500 focus:border-transparent "
                                 placeholder="Enter paint name"
                             />
                         </div>
@@ -91,9 +88,7 @@ const PaintForm = () => {
                             <select
                                 value={paintFinishes}
                                 onChange={(e) => setPaintFinish(e.target.value)}
-                                className="appearance-none block w-full px-3 py-2 
-                                border rounded-md placeholder-gray-400 
-                                focus:outline-none focus:ring-4 focus:ring-blue-500 focus:border-transparent"
+                                className="block w-full px-3 py-2 placeholder-gray-400 border rounded-md appearance-none focus:outline-none focus:ring-4 focus:ring-blue-500 focus:border-transparent"
                             >
                                 <option value="" disabled>Select paint finish</option>
                                 <option value="eggshell">Eggshell</option>
@@ -112,7 +107,7 @@ const PaintForm = () => {
                                 type="text"
                                 value={paintComposition}
                                 onChange={(e) => setPaintComposition(e.target.value)}
-                                className="appearance-none block w-full px-3 py-2 border rounded-md placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:border-transparent"
+                                className="block w-full px-3 py-2 placeholder-gray-400 border rounded-md appearance-none focus:outline-none focus:ring-4 focus:ring-blue-500 focus:border-transparent"
                                 placeholder="Enter paint composition"
                             />
                         </div>

@@ -14,7 +14,7 @@ const Rooms = () => {
 
         const building = { name, rooms }
 
-        const response = await fetch('/buildings', {
+        const response = await fetch('https://trailblazerupkeeper.onrender.com/buildings', {
             method: 'POST',
             body: JSON.stringify(building),
             headers: {
@@ -37,14 +37,14 @@ const Rooms = () => {
         }
     }
     return (
-        <div className="flex mt-20 justify-center">
-            <form className="create bg-white p-6 rounded-lg shadow-md" onSubmit={handleSubmit}>
-                <h3 className="text-lg font-medium mb-2">Add a New Building</h3>
+        <div className="flex justify-center mt-20">
+            <form className="p-6 bg-white rounded-lg shadow-md create" onSubmit={handleSubmit}>
+                <h3 className="mb-2 text-lg font-medium">Add a New Building</h3>
 
                 <div className="mb-4">
-                    <label className="block text-gray-700 font-bold mb-2" htmlFor="name">Building Name:</label>
+                    <label className="block mb-2 font-bold text-gray-700" htmlFor="name">Building Name:</label>
                     <input
-                        className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="w-full px-3 py-2 leading-tight text-gray-700 border rounded appearance-none focus:outline-none focus:shadow-outline"
                         id="name"
                         type="text"
                         onChange={(e) => setName(e.target.value)}
@@ -53,9 +53,9 @@ const Rooms = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label className="block text-gray-700 font-bold mb-2" htmlFor="rooms">Number of Classrooms:</label>
+                    <label className="block mb-2 font-bold text-gray-700" htmlFor="rooms">Number of Classrooms:</label>
                     <input
-                        className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="w-full px-3 py-2 leading-tight text-gray-700 border rounded appearance-none focus:outline-none focus:shadow-outline"
                         id="rooms"
                         type="number"
                         onChange={(e) => setClassrooms(e.target.value)}
@@ -63,9 +63,9 @@ const Rooms = () => {
                     />
                 </div>
 
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Add Building</button>
+                <button className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline" type="submit">Add Building</button>
 
-                {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
+                {error && <div className="mt-2 text-sm text-red-500">{error}</div>}
             </form>
         </div>
 
