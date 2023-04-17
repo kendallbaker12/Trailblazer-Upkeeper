@@ -1,4 +1,6 @@
 require('dotenv').config()
+const corssucks = require('cors')
+const helmet = require('helmet')
 
 const express = require('express')
 const mongoose = require('mongoose')
@@ -11,6 +13,9 @@ const app = express()
 
 //middleware
 app.use(express.json())
+app.use(helmet())
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }))
+app.use(corssucks())
 
 app.use((req, res, next) => {
     console.log(req.path, req.method)
