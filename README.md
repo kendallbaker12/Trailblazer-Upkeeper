@@ -31,39 +31,55 @@ We experience this problem on a daily basis, so one way I have devised is to mak
 | 15   | Apr 23-29    | Portfolio Defense |
 
 
-
-<div style="display: grid; grid-template-columns: repeat(1, 3fr); gap: 20px;">
-    <figure>
-        <img alt="home page" src="./UpKeeper/Home-Page.png" >
-        <figcaption>This is the Home page for TrailBlazerUpKeeper.</figcaption>
-    </figure>
-    <figure>
-        <img alt="Building page 1" src="./UpKeeper/Buildings-page-1.png" >
-        <figcaption>The building page, from here the user can view every building and also view and add rooms.</figcaption>
-    </figure>
-    <figure>
-        <img alt="Smith Room Form" src="./UpKeeper/Buildings-page-2-Smith-Room-form.png" style="width: 700px; height: 338px;">
-        <figcaption>The user can select a building to add a room to, in this instance the form for adding a room to the Smith Computer Center is open.</figcaption>
-    </figure>
-    <figure>
-        <img alt="Smith Room Details" src="./UpKeeper/Buildings-page-3-Smith-Room-details.png" style="width: 700px; height: 338px;">
-        <figcaption>The user can also view current rooms in the building, in this instance the rooms of the Smith Computer Center are being shown.</figcaption>
-    </figure>
-    <figure>
-        <img alt="Smith Room Details being shown" src="./UpKeeper/Buildings-page-4-Smith-room-details-being-shown.png" style="width: 700px; height: 338px;">
-        <figcaption>In this instance some of the Rooms are being shown and the paints in each room are visible.</figcaption>
-    </figure>
-    <figure>
-        <img alt="Smith Room Form creation." src="./UpKeeper/Buildings-page-5-Smith-room-form-1.png" style="width: 600px; height: 338px;">
-        <figcaption>Lets add a room!</figcaption>
-    </figure>
-    <figure>
-        <img alt="Smith Room Form creation." src="./UpKeeper/Buildings-page-8-smith-room-form-4.png" style="width: 600px; height: 338px;">
-        <figcaption></figcaption>
-    </figure>
-    <figure>
-        <img alt="Smith Room Form creation." src="./UpKeeper/Buildings-page-10-smith-room-created-updated.png" style="width: 600px; height: 338px;">
-        <figcaption>Here is the room we have just created.</figcaption>
-    </figure>
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+  <figure>
+    <picture>
+      <img alt="home page" src="./UpKeeper/Home-Page.png">
+    </picture>
+    <figcaption>This is the Home page for TrailBlazerUpKeeper.</figcaption>
+  </figure>
+  <figure>
+    <picture>
+      <img alt="Building page 1" src="./UpKeeper/Buildings-page-1.png">
+    </picture>
+    <figcaption>The building page, from here the user can view every building and also view and add rooms.</figcaption>
+  </figure>
+  <figure>
+    <picture>
+      <img alt="Smith Room Form" src="./UpKeeper/Buildings-page-2-Smith-Room-form.png">
+    </picture>
+    <figcaption>The user can select a building to add a room to, in this instance the form for adding a room to the Smith Computer Center is open.</figcaption>
+  </figure>
+  <figure>
+    <picture>
+      <img alt="Smith Room Details" src="./UpKeeper/Buildings-page-3-Smith-Room-details.png">
+    </picture>
+    <figcaption>The user can also view current rooms in the building, in this instance the rooms of the Smith Computer Center are being shown.</figcaption>
+  </figure>
+  <figure>
+    <picture>
+      <img alt="Smith Room Details being shown" src="./UpKeeper/Buildings-page-4-Smith-room-details-being-shown.png">
+    </picture>
+    <figcaption>In this instance some of the Rooms are being shown and the paints in each room are visible.</figcaption>
+  </figure>
+  <figure>
+    <picture>
+      <img alt="Smith Room Form creation." src="./UpKeeper/Buildings-page-5-Smith-room-form-1.png">
+    </picture>
+    <figcaption>Lets add a room!</figcaption>
+  </figure>
+  <figure>
+    <picture>
+      <img alt="Smith Room Form creation." src="./UpKeeper/Buildings-page-8-smith-room-form-4.png">
+    </picture>
+    <figcaption></figcaption>
+  </figure>
+  <figure>
+    <picture>
+      <img alt="Smith Room Form creation." src="./UpKeeper/Buildings-page-10-smith-room-created-updated.png">
+    </picture>
+    <figcaption>Here is the room we have just created.</figcaption>
+  </figure>
 </div>
+
 
