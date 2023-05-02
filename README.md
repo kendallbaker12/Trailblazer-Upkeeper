@@ -30,6 +30,55 @@ We experience this problem on a daily basis, so one way I have devised is to mak
 | 14   | Apr 16-22    | Showcase          |
 | 15   | Apr 23-29    | Portfolio Defense |
 
-<p>Hello!</p>
 
-![Alt hello there](./UpKeeper/Buildings-page-1.png)
+
+<div style="display: flex; flex-wrap: wrap;">
+  <div style="flex-basis: 50%;">
+    <figure>
+      <img alt="home page" src="./UpKeeper/Home-Page.png" style="max-width: 100%;">
+      <figcaption>This is the Home page for TrailBlazerUpKeeper.</figcaption>
+    </figure>
+  </div>
+  <div style="flex-basis: 50%;">
+    <figure>
+      <img alt="Building page 1" src="./UpKeeper/Buildings-page-1.png" style="max-width: 100%;">
+      <figcaption>The building page, from here the user can view every building and also view and add rooms.</figcaption>
+    </figure>
+  </div>
+  <div style="flex-basis: 50%;">
+    <figure>
+      <img alt="Smith Room Form" src="./UpKeeper/Buildings-page-2-Smith-Room-form.png" style="max-width: 100%;">
+      <figcaption>The user can select a building to add a room to, in this instance the form for adding a room to the Smith Computer Center is open.</figcaption>
+    </figure>
+  </div>
+  <div style="flex-basis: 50%;">
+    <figure>
+      <img alt="Smith Room Details" src="./UpKeeper/Buildings-page-3-Smith-Room-details.png" style="max-width: 100%;">
+      <figcaption>The user can also view current rooms in the building, in this instance the rooms of the Smith Computer Center are being shown.</figcaption>
+    </figure>
+  </div>
+  <div style="flex-basis: 50%;">
+    <figure>
+      <img alt="Smith Room Details being shown" src="./UpKeeper/Buildings-page-4-Smith-room-details-being-shown.png" style="max-width: 100%;">
+      <figcaption>In this instance some of the Rooms are being shown and the paints in each room are visible.</figcaption>
+    </figure>
+  </div>
+  <div style="flex-basis: 50%;">
+    <figure>
+      <img alt="Smith Room Form creation." src="./UpKeeper/Buildings-page-5-Smith-room-form-1.png" style="max-width: 100%;">
+      <figcaption>Lets add a room!</figcaption>
+    </figure>
+  </div>
+  <div style="flex-basis: 50%;">
+    <figure>
+      <img alt="Smith Room Form creation." src="./UpKeeper/Buildings-page-8-smith-room-form-4.png" style="max-width: 100%;">
+      <figcaption></figcaption>
+    </figure>
+  </div>
+  <div style="flex-basis: 50%;">
+    <figure>
+      <img alt="Smith Room Form creation." src="./UpKeeper/Buildings-page-10-smith-room-created-updated.png" style="max-width: 100%;">
+      <figcaption>Here is the room we have just created.</figcaption>
+    </figure>
+  </div>
+</div>
