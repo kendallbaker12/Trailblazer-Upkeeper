@@ -30,3 +30,4 @@ We experience this problem on a daily basis, so one way I have devised is to mak
 |14|Apr 16-22|Showcase|
 |15|Apr 23-29|Portfolio Defense|
 
+![Alt hello there](/CS4600/Trailblazer-Upkeeper/UpKeeper/Buildings-page%201.png)
